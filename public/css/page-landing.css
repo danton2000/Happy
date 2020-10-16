@@ -1,0 +1,126 @@
+#page-landing {
+  /*linear-gradient(); = degrade*/
+  background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
+  /*alinhando tudo ao centro*/
+  text-align: center;
+  /*altura minima, quero no minimo isso, se passar dessa altura não tem problema*/
+  min-height: 100vh;
+  /* alinha as caixas uma do lado da outra */
+  display: flex;
+}
+
+#container {
+  /* automatizar o tamanho das margins tanto em cima tanto em baixo e nas laterias */
+  margin: auto;
+  /* procurando a largura de forma dinamica 112rem = 1120px ou 90%*/
+  width: min(90%, 112rem);
+}
+
+.location,
+h1,
+.visit p {
+  /* procura todos os p */
+  /* separando os elementos */
+  height: 16vh;
+}
+
+#logo {
+  animation-delay: 50ms;
+}
+
+.location {
+  animation-delay: 100ms;
+}
+
+main h1 {
+  animation-delay: 150ms;
+  /* largura inteira da 100 pedaçinhos, para aplicar algum valor ralativo a 8view port widht, a font aumenta sempre quando a tela aumenta tambem */
+  /* clamp precisa de 3 valor, o minimo que eu quero, o valor que eu quero, e o maximo não passe desse valor */
+  font-size: clamp(4rem, 8vw, 8.4rem);
+}
+
+.visit p {
+  animation-delay: 200ms;
+}
+
+.visit a {
+  width: 8rem;
+  height: 8rem;
+  background: #ffd666;
+  border: none;
+  border-radius: 3rem;
+  /* alinhando os elementos */
+  display: flex;
+  /* mexendo com o elemento de cima para baixo, eixo y, sempre vai se alinhar no eixo x */
+  align-items: center;
+  /* vai mexer no eixo x, para que tudo fique alinhado no eixo y */
+  justify-content: center;
+  margin: auto;
+  transition: background 200ms;
+  animation-delay: 250ms;
+}
+
+.visit a:hover {
+  background: #96feff;
+}
+
+/* desktop version */
+@media (min-width: 760px) {
+  /* se a minima largura for 760 para cima adicione essas regras */
+  #container{
+    /* colocando mais preenchimento na caixa para a imagem crescer */
+    padding: 5rem 2rem;
+    /* shorthand background: image reapt position / size */
+    background: url("../images/bg.svg") no-repeat 80% / clamp(30rem, 54vw, 56rem);
+    /* 1 valor ou 2 valores top ou bottom vai respeitar o eixo y, right ou left vau respeitar o eixo x */
+  }
+
+  header {
+    /* todos os conteudos dentro do header um ao lado do outro, desalinhado no eixo x, para alinhar eles usar o align-items */
+    display: flex;
+    /* so funciona quando tem o flex ou grid */
+    align-items: center;
+    /* colocando espaço entre eles */
+    justify-content: space-between;
+  }
+
+  .location,
+  h1,
+  .visit p {
+    /* resentado a altura para ficar alinhado, initial = valor inicial */
+    height: initial;
+    text-align: initial;
+  }
+
+  .location {
+    text-align: right;
+    font-size: 2.4rem;
+    line-height: 1.5;
+  }
+
+  main h1 {
+    font-weight: bold;
+    line-height: 0.88;
+    /* separaçao fora da caixa h1 */
+    margin: clamp(10%, 9vh, 12%) 0 4rem;
+    /* se 300px for o minimo aplica ele, se não 80%, se 80% for menor aplica ele */
+    width: min(300px, 80%);
+  }
+
+  .visit {
+    display: flex;
+    /* alinhando no eixo x, colocar space between entre eles */
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .visit p {
+    font-size: 2.4rem;
+    line-height: 1.5;
+    width: clamp(20rem, 20vw, 30rem);
+  }
+
+  .visit a {
+    margin: initial;
+  }
+}
