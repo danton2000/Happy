@@ -16,6 +16,7 @@ body {
   /*altura, fracionando a tela em 100 pedaçinhos, pega os 100 pedaçinhos e deixa a altura em 100 desses pedaçinhos*/
   height: 100vh;
   color: white;
+  background: #EBF2F5;
 }
 
 :root {
