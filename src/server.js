@@ -1,5 +1,5 @@
 //npm = node package manager, gerenciador de dependencias do node.js(tipo um composer do php)
-//instalar na raiz do projeto, npm init -y, npm install express, vai instalar o node_modulos e package-lock.json(mapeamento de todas as dependencias), npm install hbs (pacote handlebar é um template engine para layouts dinamicos)
+//instalar na raiz do projeto, npm init -y, npm install express, vai instalar o node_modulos e package-lock.json(mapeamento de todas as dependencias), npm install hbs (pacote handlebar é um template engine para layouts dinamicos), npm install sqlite-async(sqlite)
 // o require() chama os pacotes, importando as dependencia
 const express = require("express");
 
