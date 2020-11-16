@@ -122,3 +122,18 @@ function toggleSelect(event) {
   //verificar se sim ou não
   input.value = button.dataset.value
 }
+
+//função para validar os campos preenchidos
+//pegando o evento
+function validate(event){
+  //não envia formulario
+  const needsLatAndLng = false;
+  //pegando os campos, verificar o value
+  //validar se lat e lng estão preenchidos
+  //tiver vazio
+  if(needsLatAndLng){
+  event.preventDefault()
+  alert('Selecione um ponto no mapa')
+  }
+  
+}

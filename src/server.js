@@ -13,6 +13,8 @@ const server = express();
 
 //queryStrings = https://asdasd/?id=1
 server
+  //configurando o req.body, utilizar o body no req
+  .use(express.urlencoded({ extended: true }))
   //utilizando os arquivos estaticos(css, img)
   .use(express.static("public"))
 
@@ -27,7 +29,8 @@ server
   .get("/", pages.index)
   .get("/orphanage", pages.orphanage)
   .get("/orphanages", pages.orphanages)
-  .get("/create-orphanage", pages.createOrphanage);
+  .get("/create-orphanage", pages.createOrphanage)
+  .post("/save-orphanage", pages.saveOrphanage)
 
 //ligando o servidor, escutar uma porta
 //ctrl + j = terminal
